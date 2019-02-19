@@ -18,7 +18,7 @@
 
 		<meta http-equiv="Content-Type" content="text/html; UTF-8">
 		<title>Gestión de Proyectos</title>
-	
+	<!--  
 <script>
 $(function () {
   $('[data-toggle="popover"]').popover({
@@ -50,7 +50,7 @@ function onChange() {
     $this.blur();
 }
 </script>
-
+-->
 
 
 
@@ -65,15 +65,9 @@ function onChange() {
 
 
 	<br>
-<%
-	if(request.getAttribute("MSG") != null){
-		out.println(request.getAttribute("MSG") + "<br>");
-	}
-	
-%>
 
 	<h4 class="titulo">
-	  
+
 		<strong>&nbsp;Generador de entornos de Machine Learning</strong>
 	</h4>
 	
@@ -105,7 +99,6 @@ function onChange() {
 &nbsp;
 
 
-<!--  
 <select size="4" name="DATA" id="DATA">
 
 
@@ -116,7 +109,7 @@ function onChange() {
    <option value="3" data-info="data3" >Reviews of courses of Coursera</option>
   
 </select>
--->
+<!--  
 <br>
 <select size="3" name="selectList" id="selectList">
     <option value="1" data-info="data1">Item 1</option>
@@ -143,7 +136,7 @@ function onChange() {
 		data-content="hola descripcion de students">Ver detalles</button>
 					
 
-
+-->
 
 
 <br>
@@ -152,7 +145,6 @@ function onChange() {
 <%
 	out.println("Seleccione Librerias: ");
 %>
-
 
 <br>
 &nbsp;
@@ -173,23 +165,13 @@ function onChange() {
 
 <br>
 <br>
-&nbsp;
-<%
-	out.println("Seleccione el archivo de datos que quiere introducir: " + "<br>");
-%>
 
 
-&nbsp;
-<input type="file" value="" name="file"><br>
 <br>
 &nbsp;
 <%
 	out.println("Seleccione IDE de desarrollo: ");
 %>
-
-<br>
-&nbsp;
-
 <select name="IDE">
 
    <option value="NetBeans">NetBeans</option> 
@@ -198,18 +180,33 @@ function onChange() {
 </select>
         <br>
         <br>
+<br>
+&nbsp;
+
+
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
       
           
        
-      
+      <button type="submit" class="btn btn-success">Generar</button> 
 
-<button type="submit" class="btn btn-success">Generar</button>
+
 &nbsp;
-
-
 </form>
+
+&nbsp;
+<%
+	out.println("Seleccione el archivo de datos que quiere introducir: " + "<br>");
+%>
+&nbsp;
+<form action="uploadServlet" method="post" enctype="multipart/form-data">
+<input type="file" name="fileName">
+<input type="submit" value="Subir archivo">
+</form>
+<h5>${requestScope.message}</h5>
+<!--  <button type="submit" class="btn btn-success">Generar</button> -->
+<a href="<%= request.getContextPath()%>/resultados.jsp"><button class="btn btn-success" type="submit">Generar</button></a>
 &nbsp;
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

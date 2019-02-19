@@ -23,7 +23,7 @@
 
 	<%
 	//creo carpeta de datos
-	String carpeta = "/Users/adrianhm91/Desktop/workspace/DockerCreator/DATOS/";
+	String carpeta = "/Users/adrianhm91/git/DockerCreator/DockerProject/DATOS/";
 	
 		File rutaCarpeta = new File(carpeta);
 		boolean carpetaCreada;
@@ -37,24 +37,24 @@
 	
 	
 	
-		String fichero = "/Users/adrianhm91/Desktop/workspace/DockerCreator/DATOS/ayuda.txt";
+		String fichero = "/Users/adrianhm91/git/DockerCreator/DockerProject/DATOS/ayuda.txt";
 		
-		String mysqlFichero = "/Users/adrianhm91/Desktop/workspace/DockerCreator/DATOS/MySql/";
-		String postgreFichero = "/Users/adrianhm91/Desktop/workspace/DockerCreator/DATOS/PostgreSQL/";
-		String mariaDBFichero = "/Users/adrianhm91/Desktop/workspace/DockerCreator/DATOS/MariaDB/";
+		String mysqlFichero = "/Users/adrianhm91/git/DockerCreator/DockerProject/DATOS/MySql/";
+		String postgreFichero = "/Users/adrianhm91/git/DockerCreator/DockerProject/DATOS/PostgreSQL/";
+		String mariaDBFichero = "/Users/adrianhm91/git/DockerCreator/DockerProject/DATOS/MariaDB/";
 		
-		String dockerfileMysql = "/Users/adrianhm91/Desktop/workspace/DockerCreator/DATOS/MySql/Dockerfile";
-		String dockerfilePostgre = "/Users/adrianhm91/Desktop/workspace/DockerCreator/DATOS/PostgreSQL/Dockerfile";
-		String dockerfileMariaDB = "/Users/adrianhm91/Desktop/workspace/DockerCreator/DATOS/MariaDB/Dockerfile";
-		
+		String dockerfileMysql = "/Users/adrianhm91/git/DockerCreator/DockerProject/DATOS/MySql/Dockerfile";
+		String dockerfilePostgre = "/Users/adrianhm91/git/DockerCreator/DockerProject/DATOS/PostgreSQL/Dockerfile";
+		String dockerfileMariaDB = "/Users/adrianhm91/git/DockerCreator/DockerProject/DATOS/MariaDB/Dockerfile";
+	
 		Boolean creado = false;
 
 		PrintWriter pw = new PrintWriter(new FileOutputStream(fichero));
 		
 		
 		
-		
-	/*	File ruta = new File(mysqlFichero);
+		/*
+		File ruta = new File(mysqlFichero);
 		if (ruta.mkdir()){
 			creado=true;
 		}
@@ -254,9 +254,43 @@
 		}
 	%>
 
-	<!-- ++++++++++++++++++++++++++++++++++++ANALYSIS FICHERO++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ++++++++++++++++++++++++++++++++++++IDE FICHERO++++++++++++++++++++++++++++++++++++++++++ -->
 
+<%
+		String ide = request.getParameter("IDE");
+		if (ide.equals("NetBeans")) {
 
+			String str = "Has seleccionado NetBeans \n";
+			pw.flush();
+			pw.println(str);
+	%>
+	<h3 class="titulo5">
+		<strong>NetBeans</strong>
+	</h3>
+
+	<%
+		} else if (ide.equals("Eclipse")) {
+
+			String str = "Has seleccionado Eclipse\n";
+			pw.flush();
+			pw.println(str);
+	%>
+	<h3 class="titulo5">
+		<strong>Eclipse</strong>
+	</h3>
+	<%
+		} else if (ide.equals("SublimeText3")) {
+
+			String str = "Has seleccionado SublimeText3\n";
+			pw.flush();
+			pw.println(str);
+	%>
+	<h3 class="titulo5">
+		<strong>SublimeText3</strong>
+	</h3>
+	<%
+		}
+	%>
 
 
 
