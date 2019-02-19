@@ -23,15 +23,15 @@ public class upload extends HttpServlet {
      * Directory where uploaded files will be saved, its relative to
      * the web application directory.
      */
-    private static final String UPLOAD_DIR = "uploads";
+    private static final String UPLOAD_DIR = "/Users/adrianhm91/git/DockerCreator/DockerProject/DATOS/";
      
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
         // gets absolute path of the web application
-        String applicationPath = request.getServletContext().getRealPath("");
+       // String applicationPath = request.getServletContext().getRealPath("");
         // constructs path of the directory to save uploaded file
-        String uploadFilePath = applicationPath + File.separator + UPLOAD_DIR;
-         
+     //   String uploadFilePath = applicationPath + File.separator + UPLOAD_DIR;
+        String uploadFilePath = File.separator + UPLOAD_DIR;
         // creates the save directory if it does not exists
         File fileSaveDir = new File(uploadFilePath);
         if (!fileSaveDir.exists()) {
@@ -46,7 +46,7 @@ public class upload extends HttpServlet {
             part.write(uploadFilePath + File.separator + fileName);
         }
  
-        request.setAttribute("message", fileName + " File uploaded successfully!");
+        request.setAttribute("message", fileName + " ¡Archivo subido! ");
         getServletContext().getRequestDispatcher("/index.jsp").forward(
                 request, response);
     }

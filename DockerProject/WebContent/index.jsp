@@ -71,7 +71,7 @@ function onChange() {
 		<strong>&nbsp;Generador de entornos de Machine Learning</strong>
 	</h4>
 	
-<form action="resultados.jsp" method="post">
+<form action="resultados.jsp" method="post" id="form1">
 
 &nbsp;
 <%
@@ -99,7 +99,7 @@ function onChange() {
 &nbsp;
 
 
-<select size="4" name="DATA" id="DATA">
+<select size="1" name="DATA" id="DATA">
 
 
    <option value="1" data-info="holaaaa">Black Friday</option> 
@@ -189,27 +189,44 @@ function onChange() {
       
           
        
-      <button type="submit" class="btn btn-success">Generar</button> 
+    <!--    <button type="submit" class="btn btn-success">Generar</button> -->
 
 
 &nbsp;
-</form>
 
+</form>
 &nbsp;
 <%
 	out.println("Seleccione el archivo de datos que quiere introducir: " + "<br>");
 %>
 &nbsp;
-<form action="uploadServlet" method="post" enctype="multipart/form-data">
+ 
+  <form action="uploadServlet" method="post" enctype="multipart/form-data" id="form1"> 
 <input type="file" name="fileName">
 <input type="submit" value="Subir archivo">
+ 
 </form>
+
+
 <h5>${requestScope.message}</h5>
+
+<!--  
+<input  type="file" name="fileName" formmethod="post" onclick="uploadServlet" formenctype="multipart/form-data" id="form1">
+<input type="submit" value="Subir archivo">
+
+
+
+<h5>${requestScope.message}</h5>
+-->
+
+
 <!--  <button type="submit" class="btn btn-success">Generar</button> -->
-<a href="<%= request.getContextPath()%>/resultados.jsp"><button class="btn btn-success" type="submit">Generar</button></a>
+<a href="<%= request.getContextPath()%>/resultados.jsp"><button form="form1" class="btn btn-success" type="submit">Generar</button></a>
 &nbsp;
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+
 <a href="<%= request.getContextPath()%>/ServletLogout"><button class="btn btn-warning" type="submit">Salir</button></a>
 
 
