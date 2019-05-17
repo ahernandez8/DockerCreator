@@ -1,237 +1,189 @@
-  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-
-<%@page import="java.util.*" %>
-<%@page import="java.io.*" %>
+	pageEncoding="UTF-8"%>
+<%@page import="java.util.*"%>
+<%@page import="java.io.*"%>
 
 <html>
-	<head>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		 
-  	    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-    	<script type="text/javascript" src="js/functions.js"></script>
+<head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
 
-		<meta http-equiv="Content-Type" content="text/html; UTF-8">
-		<title>Gestión de Proyectos</title>
-	<!--  
-<script>
-$(function () {
-  $('[data-toggle="popover"]').popover({
-	  placement:"right",
-	  trigger:'hover' 
-  })
-});
-</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	type="text/javascript"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
 
-<script>
-$(function () {
-    $("#selectList").on("change", onChange);
-    $("#selectList").on("focus", function()
-    	     {
-        $(this).popover('destroy')
-   			 });
-});
+<script type="text/javascript" src="js/functions.js"></script>
 
-function onChange() {
-    var $this = $(this);
-    var $e = $(this.target);
-    $('#selectList').popover('destroy');
-    $("#selectList").popover({
-        trigger: 'hover',
-        html: true,
-        placement: 'right',
-        content: $("#selectList option:selected").attr('data-info')
-    }).popover('show');
-    $this.blur();
-}
-</script>
--->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 
-		<style type="text/css">
-   <%@include file="css/css.css" %>
+
+
+<meta http-equiv="Content-Type" content="text/html; UTF-8">
+<title>Gestión de Proyectos</title>
+
+<style type="text/css">
+<%@include file="css/css.css"%>
 </style>
 
 
-	</head>
+</head>
 <body>
 
-
-
-	<br>
-
-	<h4 class="titulo">
-
-		<strong>&nbsp;Generador de entornos de Machine Learning</strong>
-	</h4>
+	<div class="container">
+	<form action="form.jsp" method="post" id="formIndex">
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<h1 class="titulo">
+					<strong>Generador de entornos de Machine Learning</strong>
+				</h1>
+			</div>
+			<div class="col-3"></div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-3">
+				<label for="MAIL">Correo electronico</label>
+			</div>
+			<div class="col-7">
+				<input class="form-control" type="text" value="dockeruserucam@gmail.com" name="MAIL" required>
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-3">
+				<label for="PASS">Contraseña</label>
+			</div>
+			<div class="col-7">
+				<input type="password" value="docker-user" name="PASS" class="form-control" required>
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-3">
+				<label for="USERNAME">Nombre de usuario</label>
+			</div>
+			<div class="col-7">
+				<input type="text" value="dockeruserucam" name="USERNAME" class="form-control" required><br>
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-3">
+				<label for="CERTS">Ruta de certificados Docker</label>
+			</div>
+			<div class="col-7">
+				<input type="text" value="/Users/adrianhm91/.docker/machine/certs"
+					name="CERTS" class="form-control" required>
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-3">
+				<label for="CONF">Ruta de ficheros de configuración Docker</label>
+			</div>
+			<div class="col-7">
+				<div class="input-group">
+					<input type="text" value="/Users/adrianhm91/.docker/" name="CONF" class="form-control" required>
+					<div class="input-group-append">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-info-sign"></span></span>
+		            </div>
+				</div>
+				
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-7">
+				<a href="<%=request.getContextPath()%>/form.jsp">
+					<button form="formIndex" class="btn btn-success" type="submit">
+						Siguiente>>
+					</button>
+				</a>
+			</div>
+			<div class="col-1"></div>
+			
+		</div>
+		</form>
+	</div>
 	
-<form action="resultados.jsp" method="post" id="form1">
-
-&nbsp;
-<%
-	out.println("Seleccione Base de Datos: ");
-%>
-
-
-<br>
-&nbsp;
-<select name="BBDD">
-   <option value="MySql">MySql</option> 
-   <option value="PostgreSQL">PostgreSQL</option>
-   <option value="MariaDB">MariaDB</option>
-</select>
-
-<br>
-<br>
-
-&nbsp;
-<%
-	out.println("Seleccione DataSet: ");
-%>
-
-<br>
-&nbsp;
-
-
-<select size="1" name="DATA" id="DATA">
-
-
-   <option value="1" data-info="holaaaa">Black Friday</option> 
-
-   <option value="2" data-info="data2" >Students Performance</option>
-   
-   <option value="3" data-info="data3" >Reviews of courses of Coursera</option>
-  
-</select>
 <!--  
-<br>
-<select size="3" name="selectList" id="selectList">
-    <option value="1" data-info="data1">Item 1</option>
-    <option value="2" data-info="data2">Item 2</option>
-    <option value="3" data-info="data3">Item 3</option>
-    <option value="4" data-info="data4">Item 4</option>
-</select>
+	<section class="principal">
+		<form action="form.jsp" method="post" id="formIndex">
 
-    
-<button type="button" 
-		class="btn btn-lg btn-dark" 
-		data-toggle="popover"
-		id="pop1"
-		title="Black friday" 
-		data-content="hola descripcion de black friday">Ver detalles</button>
-		
+			<section class="form1correo">
+				<h5>Correo electronico</h5>
+				<input type="text" value="dockeruserucam@gmail.com" name="MAIL"
+					required>
+			</section>
 
+			<section class="form2pass">
+				<h5>Contraseña</h5>
+				<input type="password" value="docker-user" name="PASS" required>
+			</section>
 
-			<button type="button" 
-		class="btn btn-lg btn-dark" 
-		data-toggle="popover"
-		id="pop2"
-		title="Students Performance" 
-		data-content="hola descripcion de students">Ver detalles</button>
-					
+			<section class="form3user">
+				<h5>Nombre de usuario</h5>
+				<input type="text" value="dockeruserucam" name="USERNAME" required><br>
+			</section>
 
+			<section class="formDocker">
+				<h5>Ruta de certificados Docker</h5>
+
+				<button type="button" class="pop-me-over" data-toggle="popover"
+					data-placement="right"
+					data-content="En este formulario has de poner donde se encuentran localizados en tu máquina los certificados de Docker. Por ejemplo: /Users/USUARIO/.docker/machine/certs acompañado de dobles comillas"
+					data-title="Ruta de certificados Docker" data-container="body"
+					data-trigger="focus">
+					<i class="fa fa-info"></i>
+				</button>
+
+				<input type="text" value="/Users/adrianhm91/.docker/machine/certs"
+					name="CERTS" class="form2text" required><br>
+
+				<h5>Ruta de ficheros de configuración Docker:</h5>
+
+				<button type="button" class="pop-me-over" data-toggle="popover"
+					data-placement="right"
+					data-content="En este formulario has de poner donde se encuentran localizados en tu máquina los ficheros de configuración de Docker. Por ejemplo: /Users/USUARIO/.docker/ acompañado de dobles comillas"
+					data-title="Ruta de ficheros de configuración"
+					data-container="body" data-trigger="focus">
+					<i class="fa fa-info"></i>
+				</button>
+
+				<input type="text" value="/Users/adrianhm91/.docker/" name="CONF"
+					class="form2text" required><br>
+			</section>
+
+		</form>
+
+	</section>
+
+	<a href="<%=request.getContextPath()%>/form.jsp"><button
+			form="formIndex" class="btn btn-success" type="submit">Siguiente
+			>></button></a>
+			-->
+			
+	<!--  	
+<button type="button" class="btn btn-lg btn-danger" data-container="body" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
 -->
-
-
-<br>
-<br>
-&nbsp;
-<%
-	out.println("Seleccione Librerias: ");
-%>
-
-<br>
-&nbsp;
-<select name="LIBRARY">
-   <option value="SciPy">SciPy</option> 
-   <option value="Scikit-learn">Scikit-learn</option>
-   <option value="Python 3 General">Python 3 General</option>
-</select>
-
-
-&nbsp;
-<select name="LIBRARY2">
-   <option value="TensorFlow">TensorFlow</option> 
-   <option value="matplotlib">matplotlib</option>
-   <option value="Keras">Keras</option>
-   
-</select>
-
-<br>
-<br>
-
-
-<br>
-&nbsp;
-<%
-	out.println("Seleccione IDE de desarrollo: ");
-%>
-<select name="IDE">
-
-   <option value="NetBeans">NetBeans</option> 
-   <option value="Eclipse">Eclipse</option>
-   <option value="SublimeText3">Sublime Text 3</option>
-</select>
-        <br>
-        <br>
-<br>
-&nbsp;
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      
-          
-       
-    <!--    <button type="submit" class="btn btn-success">Generar</button> -->
-
-
-&nbsp;
-
-</form>
-&nbsp;
-<%
-	out.println("Seleccione el archivo de datos que quiere introducir: " + "<br>");
-%>
-&nbsp;
- 
-  <form action="uploadServlet" method="post" enctype="multipart/form-data" id="form1"> 
-<input type="file" name="fileName">
-<input type="submit" value="Subir archivo">
- 
-</form>
-
-
-<h5>${requestScope.message}</h5>
-
-<!--  
-<input  type="file" name="fileName" formmethod="post" onclick="uploadServlet" formenctype="multipart/form-data" id="form1">
-<input type="submit" value="Subir archivo">
-
-
-
-<h5>${requestScope.message}</h5>
--->
-
-
-<!--  <button type="submit" class="btn btn-success">Generar</button> -->
-<a href="<%= request.getContextPath()%>/resultados.jsp"><button form="form1" class="btn btn-success" type="submit">Generar</button></a>
-&nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-
-
-<a href="<%= request.getContextPath()%>/ServletLogout"><button class="btn btn-warning" type="submit">Salir</button></a>
-
-
-		
-
-
 </body>
 </html>

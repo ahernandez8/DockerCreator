@@ -1,26 +1,37 @@
 $(function () {
   $('[data-toggle="popover"]').popover({
-	  placement:"right",
-	  trigger:'hover' 
+	   html:true,
   })
 });
 
-$(function () {
-    $("#selectList").on("change", onChange);
-    $("#selectList").on("focus", function()
-    	     {
-        $(this).popover('destroy')
-   			 });
+
+
+/*
+
+var $popoversettings = $('.settings').popover({
+    html: true,
+    placement: 'right',
+    content: function () {
+        var mySettings = $(this).data('mysettings');
+        return $(mySettings).html();
+    }
 });
 
-function onChange() {
-    var $this = $(this);
-    var $e = $(this.target);
-    $('#selectList').popover('destroy');
-    $("#selectList").popover({
-        trigger: 'hover',
-        placement: 'right',
-        content: $("#selectList option:selected").attr('data-info')
-    }).popover('show');
-    $this.blur();
-}
+
+$(':not(#anything)').on('click', function (e) {
+    $popoversettings.each(function () {
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+            $(this).popover('hide');
+            return;
+        }
+    });
+});
+
+
+$(document).on('change','#list', function () {
+    $('#result').text($('#list option:selected').val());
+});
+*/
+
+
+
