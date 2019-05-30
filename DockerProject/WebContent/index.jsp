@@ -59,7 +59,7 @@
 				<label for="MAIL">Correo electronico</label>
 			</div>
 			<div class="col-7">
-				<input class="form-control" type="text" value="dockeruserucam@gmail.com" name="MAIL" required>
+				<input class="form-control" type="text" name="MAIL" required>
 			</div>
 			<div class="col-1"></div>
 		</div>
@@ -69,7 +69,7 @@
 				<label for="PASS">Contraseña</label>
 			</div>
 			<div class="col-7">
-				<input type="password" value="docker-user" name="PASS" class="form-control" required>
+				<input type="password"  name="PASS" class="form-control" required>
 			</div>
 			<div class="col-1"></div>
 		</div>
@@ -79,7 +79,7 @@
 				<label for="USERNAME">Nombre de usuario</label>
 			</div>
 			<div class="col-7">
-				<input type="text" value="dockeruserucam" name="USERNAME" class="form-control" required><br>
+				<input type="text" name="USERNAME" class="form-control" required><br>
 			</div>
 			<div class="col-1"></div>
 		</div>
@@ -89,7 +89,7 @@
 				<label for="CERTS">Ruta de certificados Docker</label>
 			</div>
 			<div class="col-7">
-				<input type="text" value="/Users/adrianhm91/.docker/machine/certs"
+				<input type="text"
 					name="CERTS" class="form-control" required>
 			</div>
 			<div class="col-1"></div>
@@ -101,7 +101,7 @@
 			</div>
 			<div class="col-7">
 				<div class="input-group">
-					<input type="text" value="/Users/adrianhm91/.docker/" name="CONF" class="form-control" required>
+					<input type="text"  name="CONF" class="form-control" required>
 					<div class="input-group-append">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-info-sign"></span></span>
 		            </div>
@@ -125,65 +125,6 @@
 		</form>
 	</div>
 	
-<!--  
-	<section class="principal">
-		<form action="form.jsp" method="post" id="formIndex">
 
-			<section class="form1correo">
-				<h5>Correo electronico</h5>
-				<input type="text" value="dockeruserucam@gmail.com" name="MAIL"
-					required>
-			</section>
-
-			<section class="form2pass">
-				<h5>Contraseña</h5>
-				<input type="password" value="docker-user" name="PASS" required>
-			</section>
-
-			<section class="form3user">
-				<h5>Nombre de usuario</h5>
-				<input type="text" value="dockeruserucam" name="USERNAME" required><br>
-			</section>
-
-			<section class="formDocker">
-				<h5>Ruta de certificados Docker</h5>
-
-				<button type="button" class="pop-me-over" data-toggle="popover"
-					data-placement="right"
-					data-content="En este formulario has de poner donde se encuentran localizados en tu máquina los certificados de Docker. Por ejemplo: /Users/USUARIO/.docker/machine/certs acompañado de dobles comillas"
-					data-title="Ruta de certificados Docker" data-container="body"
-					data-trigger="focus">
-					<i class="fa fa-info"></i>
-				</button>
-
-				<input type="text" value="/Users/adrianhm91/.docker/machine/certs"
-					name="CERTS" class="form2text" required><br>
-
-				<h5>Ruta de ficheros de configuración Docker:</h5>
-
-				<button type="button" class="pop-me-over" data-toggle="popover"
-					data-placement="right"
-					data-content="En este formulario has de poner donde se encuentran localizados en tu máquina los ficheros de configuración de Docker. Por ejemplo: /Users/USUARIO/.docker/ acompañado de dobles comillas"
-					data-title="Ruta de ficheros de configuración"
-					data-container="body" data-trigger="focus">
-					<i class="fa fa-info"></i>
-				</button>
-
-				<input type="text" value="/Users/adrianhm91/.docker/" name="CONF"
-					class="form2text" required><br>
-			</section>
-
-		</form>
-
-	</section>
-
-	<a href="<%=request.getContextPath()%>/form.jsp"><button
-			form="formIndex" class="btn btn-success" type="submit">Siguiente
-			>></button></a>
-			-->
-			
-	<!--  	
-<button type="button" class="btn btn-lg btn-danger" data-container="body" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
--->
 </body>
 </html>
